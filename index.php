@@ -1,6 +1,6 @@
 <?php
 
-$secret = 'vypAoj8dgusfoTA9aJHw';
+include 'secret.php';
 
 $file = '/tmp/ggggggg.txt';
 
