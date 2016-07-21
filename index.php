@@ -2,7 +2,7 @@
 
 include 'secret.php';
 
-if(isset($_POST['secret']) && (trim($_POST['secret']) != '') ) {
+if(isset($_POST['secret']) && (trim($_POST['secret']) != '') && trim($_POST['secret'] == $secret ) {
     $s=$_POST['secret'];
 }
 else {
