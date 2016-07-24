@@ -40,8 +40,13 @@ if(isset($_POST['secret']) && (trim($_POST['secret']) != '') && (trim($_POST['se
     if(isset($_POST['lat']) && (trim($_POST['lat']) != '') && isset($_POST['long']) && (trim($_POST['long']) != '') ) {
     	$lat = $_POST['lat'];
     	$long = $_POST['long'];
+    	$homeDistance = distance($lat, $long, $home_lat, $home_long, "K");
     	
-    	echo "Distance from safe zone: " . distance($lat, $long, $home_lat, $home_long, "K") . "\n";
+    	if ($homeDistance > 0.2) {
+    		echo "\n You're more than 200m away.";
+    	} else {
+    		echo "\n I think you're in the safe zone, <200m";
+    	}
     	
     } else {
     	echo "\nGot no location";
