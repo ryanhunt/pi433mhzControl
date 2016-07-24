@@ -45,7 +45,7 @@ if(isset($_POST['secret']) && (trim($_POST['secret']) != '') && (trim($_POST['se
     	if ($homeDistance > 0.2) {
     		echo "\n You're more than 200m away.";
     	} else {
-    		echo "\n I think you're in the safe zone, <200m";
+    		echo "\n I think you're in the safe zone, less than 200m away.";
     	}
     	
     } else {
