@@ -4,6 +4,7 @@ include 'secret.php';
 
 if(isset($_POST['secret']) && (trim($_POST['secret']) != '') ) {
     $s=$_POST['secret'];
+    echo "Yep.";
 }
 else {
     echo "Nope.";
