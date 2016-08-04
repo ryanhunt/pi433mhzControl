@@ -22,6 +22,7 @@ if GPIO.input(18):
         print "Already on, closing..."
         target.write("3\n")
         GPIO.output(18,GPIO.LOW)
+        target.truncate()
         target.write("4\n")
 else:
         print "Turning on..."
