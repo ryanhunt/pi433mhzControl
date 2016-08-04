@@ -16,9 +16,10 @@ GPIO.setup(18,GPIO.OUT)
 
 #open file
 target = open(tempFile, 'r+')
+doorStatus = target.read(1)
 target.truncate()
 
-if GPIO.input(18):
+if GPIO.input(18) || doorStatus=='2':
         print "Already on, closing..."
         target.write("3\n")
         GPIO.output(18,GPIO.LOW)
