@@ -15,20 +15,20 @@ GPIO.setwarnings(False)
 GPIO.setup(18,GPIO.OUT)
 
 #open file
-target = open(tempFile, 'w')
+target = open(tempFile, 'r+')
 target.truncate()
 
 if GPIO.input(18):
         print "Already on, closing..."
         target.write("3\n")
         GPIO.output(18,GPIO.LOW)
-        target.truncate()
+        target.seek(0)
         target.write("4\n")
 else:
         print "Turning on..."
         target.write("1\n")
         GPIO.output(18,GPIO.HIGH)
-        target.truncate()
+        target.seek(0)
         target.write("2\n")
         
 target.close()
