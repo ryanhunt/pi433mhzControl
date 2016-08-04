@@ -7,8 +7,8 @@ include 'secret.php';
 Array
 (
     [secret] => ????
-    [long] => 151.080645065506
-    [lat] => -33.9834171320714
+    [long] => ???
+    [lat] => ???
 )
 
 */
@@ -46,8 +46,7 @@ if(isset($_POST['secret']) && (trim($_POST['secret']) != '') && (trim($_POST['se
     		echo "\nYou're more than 200m away.";
     	} else {
     		echo "\nI think you're in the safe zone, less than 200m away.";
-    		echo "About to run: " . $openCommand;
-		exec($openCommand);
+			exec($openCommand);
     	}
     	
     } else {
