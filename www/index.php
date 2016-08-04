@@ -46,7 +46,8 @@ if(isset($_POST['secret']) && (trim($_POST['secret']) != '') && (trim($_POST['se
     		echo "\nYou're more than 200m away.";
     	} else {
     		echo "\nI think you're in the safe zone, less than 200m away.";
-    		exec($openCommand);
+    		echo "About to run: " . $openCommand;
+		exec($openCommand);
     	}
     	
     } else {
